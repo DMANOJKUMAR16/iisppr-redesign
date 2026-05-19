@@ -5,51 +5,168 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#050816] px-6 md:px-16">
 
-      {/* Background Glow */}
-      <div className="absolute top-[-120px] left-[-120px] h-[300px] w-[300px] rounded-full bg-cyan-500/20 blur-3xl"></div>
+      {/* Base Background */}
+      <div className="absolute inset-0 bg-[#050816]" />
 
-      <div className="absolute bottom-[-120px] right-[-120px] h-[300px] w-[300px] rounded-full bg-purple-500/20 blur-3xl"></div>
+      {/* Premium Gradient Layers */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.18),transparent_30%)]"></div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(132,204,22,0.18),transparent_30%)]"></div>
+
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(245,158,11,0.08),transparent_45%)]"></div>
+
+      {/* Animated Glow Layer */}
+      <motion.div
+        animate={{
+          x: [0, 40, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute left-[15%] top-[10%] h-[350px] w-[350px] rounded-full bg-emerald-500/10 blur-[120px]"
+      />
+
+      <motion.div
+        animate={{
+          x: [0, -50, 0],
+          y: [0, 40, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute bottom-[5%] right-[10%] h-[400px] w-[400px] rounded-full bg-lime-500/10 blur-[140px]"
+      />
 
       {/* Floating Orbs */}
       <motion.div
-        animate={{ y: [0, -30, 0] }}
+        animate={{
+          y: [0, -30, 0],
+        }}
         transition={{
           duration: 6,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute left-[10%] top-[20%] h-32 w-32 rounded-full bg-cyan-400/20 blur-3xl"
+        className="absolute left-[10%] top-[20%] h-40 w-40 rounded-full bg-emerald-400/20 blur-3xl"
       />
 
       <motion.div
-        animate={{ y: [0, 40, 0] }}
+        animate={{
+          y: [0, 40, 0],
+        }}
         transition={{
           duration: 8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute right-[12%] top-[30%] h-40 w-40 rounded-full bg-purple-500/20 blur-3xl"
+        className="absolute right-[12%] top-[30%] h-44 w-44 rounded-full bg-lime-400/20 blur-3xl"
       />
 
       <motion.div
-        animate={{ y: [0, -20, 0] }}
+        animate={{
+          y: [0, -20, 0],
+        }}
         transition={{
           duration: 5,
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute bottom-[15%] left-[30%] h-28 w-28 rounded-full bg-blue-500/20 blur-3xl"
+        className="absolute bottom-[15%] left-[30%] h-32 w-32 rounded-full bg-amber-400/10 blur-3xl"
       />
 
-      {/* Light Beam */}
-      <div className="absolute left-1/2 top-0 h-[500px] w-[300px] -translate-x-1/2 bg-cyan-500/10 blur-3xl"></div>
+      {/* Floating Particles */}
+        {[...Array(55)].map((_, i) => (
+            <motion.div
+                key={i}
+                animate={{
+                    y: [0, -140],
+                    opacity: [0, 1, 0],
+                    scale: [0.8, 1.8, 0.8],
+                    x: [0, Math.random() * 20 - 10, 0],
+                }}
+                transition={{
+                    duration: 10 + i * 0.2,
+                    repeat: Infinity,
+                    delay: i * 0.15,
+                    ease: "linear",
+                }}
+            className="absolute z-[2] rounded-full bg-emerald-200/90 shadow-[0_0_18px_rgba(16,185,129,1)]"
+                style={{
+                    width: `${4 + Math.random() * 4}px`,
+                    height: `${4 + Math.random() * 4}px`,
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                    filter: "blur(0.5px)",
+                }}
+            />
+        ))}
+
+      {/* Noise Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
       {/* Grid Overlay */}
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+      <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
       <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center text-center">
 
-        {/* Small Badge */}
+        {/* Floating Left Panel */}
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+            rotate: [-2, 2, -2],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute left-0 top-[25%] hidden w-[230px] rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-2xl lg:block"
+        >
+          <p className="text-left text-sm text-gray-300">
+            AI Powered Learning Experience
+          </p>
+
+          <div className="mt-4 h-24 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-lime-400/20"></div>
+        </motion.div>
+
+        {/* Floating Right Panel */}
+        <motion.div
+          animate={{
+            y: [0, 20, 0],
+            rotate: [2, -2, 2],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute right-0 top-[35%] hidden w-[250px] rounded-3xl border border-white/10 bg-white/5 p-5 backdrop-blur-2xl lg:block"
+        >
+          <div className="flex items-center gap-3">
+            <div className="h-12 w-12 rounded-full bg-gradient-to-r from-emerald-400 to-lime-400"></div>
+
+            <div>
+              <h3 className="font-semibold">
+                Future Ready Programs
+              </h3>
+
+              <p className="text-sm text-gray-400">
+                Modern industry curriculum
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-5 h-2 rounded-full bg-white/10">
+            <div className="h-full w-[75%] rounded-full bg-gradient-to-r from-emerald-400 to-lime-400"></div>
+          </div>
+        </motion.div>
+
+        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,7 +184,7 @@ const Hero = () => {
           className="max-w-5xl text-5xl font-black leading-tight tracking-tight md:text-7xl"
         >
           Transforming Learning Through{" "}
-          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-emerald-400 via-lime-300 to-amber-300 bg-clip-text text-transparent">
             Innovation
           </span>
         </motion.h1>
@@ -79,8 +196,9 @@ const Hero = () => {
           transition={{ delay: 0.4, duration: 1 }}
           className="mt-8 max-w-2xl text-lg leading-relaxed text-gray-300"
         >
-          Empowering students with future-ready education, immersive learning
-          experiences, and globally recognized academic excellence.
+          Empowering students with future-ready education,
+          immersive learning experiences, and globally
+          recognized academic excellence.
         </motion.p>
 
         {/* Buttons */}
@@ -90,7 +208,7 @@ const Hero = () => {
           transition={{ delay: 0.7 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-5"
         >
-          <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 px-8 py-4 font-semibold transition-all duration-300 hover:scale-105">
+          <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-emerald-500 to-lime-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105">
             Explore Programs
 
             <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -101,7 +219,7 @@ const Hero = () => {
           </button>
         </motion.div>
 
-        {/* Floating Stats */}
+        {/* Stats */}
         <div className="mt-20 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
 
           {[
@@ -120,7 +238,7 @@ const Hero = () => {
               }}
               className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition-all duration-500 hover:bg-white/10"
             >
-              <h2 className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-4xl font-black text-transparent">
+              <h2 className="bg-gradient-to-r from-emerald-400 via-lime-300 to-amber-300 bg-clip-text text-4xl font-black text-transparent">
                 {item.number}
               </h2>
 
@@ -131,7 +249,6 @@ const Hero = () => {
           ))}
 
         </div>
-
       </div>
     </section>
   );
