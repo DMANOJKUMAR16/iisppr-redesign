@@ -1,17 +1,124 @@
-# React + Vite
+# IISPPR Academy – Futuristic Website Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and immersive frontend redesign concept for the IISPPR Academy website built using React, Vite, Tailwind CSS, and Framer Motion.
 
-Currently, two official plugins are available:
+This project focuses on creating a premium futuristic user experience with cinematic layouts, smooth animations, modern UI composition, and responsive design principles.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Futuristic Hero Section
+- Modern Glassmorphism UI
+- Cinematic Background Effects
+- Floating Particle Animations
+- Bento Grid Programs Section
+- Animated Testimonials
+- Smooth Scroll Navigation
+- Responsive Design
+- Interactive Hover Effects
+- Premium Footer Design
+- Framer Motion Animations
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# iisppr-redesign
+## 🛠️ Tech Stack
+
+- React.js
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Icons
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+│
+├── components/
+│   └── Navbar.jsx
+│
+├── sections/
+│   ├── Hero.jsx
+│   ├── Programs.jsx
+│   ├── Testimonials.jsx
+│   └── Footer.jsx
+│
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🚀 Getting Started
+
+### Clone Repository
+
+```bash
+git clone YOUR_GITHUB_REPOSITORY_LINK
+```
+
+### Navigate To Project
+
+```bash
+cd iisppr-redesign
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+## 🌐 Live Demo
+
+[live link](https://iisppr-redesign-orcin.vercel.app/)
+
+---
+
+## 📸 Preview
+
+Modern educational website redesign with:
+- immersive visuals
+- futuristic atmosphere
+- responsive layouts
+- smooth interactions
+- premium UI aesthetics
+
+---
+
+## 🎯 Design Goals
+
+This redesign focuses on:
+- improving visual storytelling
+- creating modern educational branding
+- enhancing user engagement
+- building immersive frontend experiences
+- maintaining clean and scalable component structure
+
+---
+
+## 📱 Responsive Design
+
+Optimized for:
+- Desktop
+- Tablet
+- Mobile Devices
+
+---
+
+## 👨‍💻 Author
+
+Manoj Kumar
+
+Frontend Developer | MERN Stack Developer
