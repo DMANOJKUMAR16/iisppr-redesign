@@ -3,7 +3,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[#050816] px-6 md:px-16">
+    <section className="relative min-h-[92vh] overflow-hidden bg-[#050816] px-6 md:px-16">
 
       {/* Base Background */}
       <div className="absolute inset-0 bg-[#050816]" />
@@ -80,39 +80,37 @@ const Hero = () => {
       />
 
       {/* Floating Particles */}
-        {[...Array(55)].map((_, i) => (
-            <motion.div
-                key={i}
-                animate={{
-                    y: [0, -140],
-                    opacity: [0, 1, 0],
-                    scale: [0.8, 1.8, 0.8],
-                    x: [0, Math.random() * 20 - 10, 0],
-                }}
-                transition={{
-                    duration: 10 + i * 0.2,
-                    repeat: Infinity,
-                    delay: i * 0.15,
-                    ease: "linear",
-                }}
-            className="absolute z-[2] rounded-full bg-emerald-200/90 shadow-[0_0_18px_rgba(16,185,129,1)]"
-                style={{
-                    width: `${4 + Math.random() * 4}px`,
-                    height: `${4 + Math.random() * 4}px`,
-                    left: `${Math.random() * 100}%`,
-                    top: `${Math.random() * 100}%`,
-                    filter: "blur(0.5px)",
-                }}
-            />
-        ))}
+      {[...Array(55)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={{
+            y: [0, -140],
+            opacity: [0, 1, 0],
+            scale: [0.8, 1.8, 0.8],
+            x: [0, Math.random() * 20 - 10, 0],
+          }}
+          transition={{
+            duration: 10 + i * 0.2,
+            repeat: Infinity,
+            delay: i * 0.15,
+            ease: "linear",
+          }}
+          className="absolute z-[2] rounded-full bg-emerald-200/90 shadow-[0_0_18px_rgba(16,185,129,1)]"
+          style={{
+            width: `${4 + Math.random() * 4}px`,
+            height: `${4 + Math.random() * 4}px`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            filter: "blur(0.5px)",
+          }}
+        />
+      ))}
 
-      {/* Noise Overlay */}
-      <div className="absolute inset-0 opacity-[0.03] mix-blend-soft-light bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
       {/* Grid Overlay */}
       <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:60px_60px]"></div>
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col items-center justify-center text-center">
+      <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl flex-col items-center justify-center pb-6 pt-24 text-center">
 
         {/* Floating Left Panel */}
         <motion.div
@@ -171,7 +169,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="mb-6 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm backdrop-blur-xl"
+          className="mb-10 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm backdrop-blur-xl"
         >
           Future Of Modern Education
         </motion.div>
@@ -209,6 +207,7 @@ const Hero = () => {
           className="mt-10 flex flex-wrap items-center justify-center gap-5"
         >
           <button className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-emerald-500 to-lime-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105">
+
             Explore Programs
 
             <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -220,7 +219,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Stats */}
-        <div className="mt-20 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="mt-16 grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-3">
 
           {[
             { number: "10K+", label: "Active Students" },
@@ -250,6 +249,10 @@ const Hero = () => {
 
         </div>
       </div>
+
+      {/* Bottom Fade Blend */}
+      <div className="absolute bottom-0 left-0 h-40 w-full bg-gradient-to-b from-transparent to-[#050816]"></div>
+
     </section>
   );
 };

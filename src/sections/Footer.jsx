@@ -7,7 +7,10 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden px-6 pb-10 pt-28 md:px-16">
+    <footer
+      id="innovation"
+      className="relative scroll-mt-24 overflow-hidden px-6 pb-10 pt-28 md:px-16"
+    >
 
       {/* Background Glow */}
       <div className="absolute left-[20%] top-[10%] h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[120px]"></div>
@@ -41,9 +44,12 @@ const Footer = () => {
             future-ready programs, and innovative education systems.
           </p>
 
-          <button className="mt-10 rounded-full bg-gradient-to-r from-emerald-500 to-lime-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105">
+          <a
+            href="#programs"
+            className="mt-10 inline-flex rounded-full bg-gradient-to-r from-emerald-500 to-lime-400 px-8 py-4 font-semibold text-black transition-all duration-300 hover:scale-105"
+          >
             Explore Programs
-          </button>
+          </a>
 
         </motion.div>
 
@@ -72,13 +78,17 @@ const Footer = () => {
           {/* Footer Links */}
           <div className="flex items-center gap-8 text-sm text-gray-400">
 
-            {["Programs", "Innovation", "Testimonials"].map((item, index) => (
+            {[
+              { name: "Programs", link: "#programs" },
+              { name: "Innovation", link: "#innovation" },
+              { name: "Testimonials", link: "#testimonials" },
+            ].map((item, index) => (
               <a
                 key={index}
-                href="#"
+                href={item.link}
                 className="transition-colors duration-300 hover:text-white"
               >
-                {item}
+                {item.name}
               </a>
             ))}
 

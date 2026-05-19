@@ -39,7 +39,12 @@ const programs = [
 
 const Programs = () => {
   return (
-    <section className="relative overflow-hidden px-6 py-32 md:px-16">
+    <section
+        id="programs"
+        className="relative scroll-mt-24 -mt-32 overflow-hidden px-6 pt-40 pb-20 md:px-16"
+    >
+
+      
 
       {/* Background Glow */}
       <div className="absolute left-[-100px] top-[20%] h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[120px]"></div>
@@ -79,7 +84,7 @@ const Programs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-16 text-center"
         >
           <p className="mb-4 text-sm uppercase tracking-[0.3em] text-emerald-300">
             Programs
@@ -239,7 +244,7 @@ const Programs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="relative mt-8 overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-10 backdrop-blur-2xl"
+          className="relative mt-4 overflow-hidden rounded-[36px] border border-white/10 bg-white/5 p-10 backdrop-blur-2xl"
         >
 
           {/* Glow */}
@@ -273,6 +278,10 @@ const Programs = () => {
         </motion.div>
 
       </div>
+
+      {/* Bottom Blend */}
+      <div className="absolute bottom-0 left-0 h-32 w-full bg-gradient-to-b from-transparent to-[#050816]"></div>
+
     </section>
   );
 };
